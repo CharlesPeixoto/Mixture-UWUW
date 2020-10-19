@@ -6,7 +6,7 @@
 fromx=0
 tox=0.999
 yliminf=0
-ylimsup=2.7
+ylimsup=4
 
 tau = 0.5
 #Probability density function
@@ -44,7 +44,7 @@ curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylim =c(yliminf,ylimsup), col = 5, lwd = 1)
 
 
-legend("top", c(expression(paste(beta,' = 0.2 ')),
+legend("topright", c(expression(paste(beta,' = 0.2 ')),
                 c(expression(paste(beta,' = 0.3 ')),
                   c(expression(paste(beta,' = 0.5 ')),
                     c(expression(paste(beta,' = 0.6 ')),
@@ -55,6 +55,15 @@ legend("top", c(expression(paste(beta,' = 0.2 ')),
 ############################################################################
 ############################################################################
 # Information for the construction of Figure 3b of Section 3.
+
+#Inicializations
+fromx=0
+tox=0.999
+yliminf=0
+ylimsup= 2.7
+tau = 0.5
+
+
 b = 0.1
 u = 0.6
 curve(f_UW,from=fromx, to=tox, add = FALSE, lty= 1,xlab = expression("x"),
