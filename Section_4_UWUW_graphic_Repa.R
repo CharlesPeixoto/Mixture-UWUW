@@ -2,15 +2,9 @@
 ###############   Unit Weibull Mixture #############
 ####################################################
 ####################################################
-#Clear the memory
-rm(list = ls())
-
 #Inicializations
 fromx=0
 tox=1
-yliminf=0
-ylimsup=6.8
-
 p = 0.4
 tau = 0.5
 #Probability density function
@@ -60,7 +54,7 @@ curve(f_UWUW,from=fromx, to=tox, add = TRUE, lty=1, ylab = expression("f(y)"),xl
       ylim =c(yliminf,ylimsup), col = 5, lwd = 1)
   
 
-legend("topright", c(expression(paste(mu,1, " = 0.2, ", mu,2, " = 0.1, ", beta,2,' = 2.0 ')),
+legend("topleft", c(expression(paste(mu,1, " = 0.2, ", mu,2, " = 0.1, ", beta,2,' = 2.0 ')),
                      c(expression(paste(mu,1, " = 0.4, ", mu,2, " = 0.2, ", beta,2,' = 2.0 ')),
                        c(expression(paste(mu,1, " = 0.5, ", mu,2, " = 0.3, ", beta,2,' = 2.5 ')),
                          c(expression(paste(mu,1, " = 0.6, ", mu,2, " = 0.4, ", beta,2,' = 5.0 ')),
@@ -73,6 +67,8 @@ legend("topright", c(expression(paste(mu,1, " = 0.2, ", mu,2, " = 0.1, ", beta,2
 # Information for the construction of Figure 4b of Section 4.
 yliminf=0
 ylimsup=3.5
+p = 0.6
+tau = 0.5
 
 l1 = 0.3
 l2 = 0.1
@@ -111,7 +107,7 @@ curve(f_UWUW,from=fromx, to=tox, add = TRUE, lty=1,
       ylim =c(yliminf,ylimsup), col = 5, lwd = 1)
 
 
-legend("topright", c(expression(paste(mu,1, " = 0.3, ", mu,2, " = 0.1, ", beta,2,' = 0.5 ')),
+legend("topleft", c(expression(paste(mu,1, " = 0.3, ", mu,2, " = 0.1, ", beta,2,' = 0.5 ')),
                      c(expression(paste(mu,1, " = 0.4, ", mu,2, " = 0.2, ", beta,2,' = 0.8 ')),
                        c(expression(paste(mu,1, " = 0.5, ", mu,2, " = 0.3, ", beta,2,' = 1.1 ')),
                          c(expression(paste(mu,1, " = 0.6, ", mu,2, " = 0.6, ", beta,2,' = 1.5 ')),
@@ -125,6 +121,8 @@ legend("topright", c(expression(paste(mu,1, " = 0.3, ", mu,2, " = 0.1, ", beta,2
 # Information for the construction of Figure 4c of Section 4.
 yliminf=0
 ylimsup=6
+p = 0.8
+tau = 0.5
 
 l1 = 0.1
 l2 = 0.2
@@ -178,6 +176,8 @@ legend("topright", c(expression(paste(mu,1, " = 0.1, ", mu,2, " = 0.2, ", beta,1
 # Information for the construction of Figure 4d of Section 4.
 yliminf=0
 ylimsup=5
+p = 0.1
+tau = 0.5
 
 l1 = 0.6
 l2 = 0.2
