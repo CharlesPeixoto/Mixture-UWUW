@@ -1,4 +1,3 @@
-rm(list = ls())
 ##Checking the moments of the two-component unit Weibull mixture model
 ####################################
 tau = 0.5 
@@ -18,7 +17,7 @@ f_UWUW<-function(x){
 integrate(f_UWUW,0,1) 
 
 ####################################################
-### Creating a function to calculate the accumulated ###
+### Creating a function to calculate the cumulative ###
 ####################################################
 F_UWUW<-function(x){
   p*(tau^((log(x)/log(mu1))^(beta1)))+(1-p)*(tau^((log(x)/log(mu2))^(beta2)))
