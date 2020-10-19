@@ -1,10 +1,7 @@
 ##############################################
 ###############    Unit Weibull  #############
 ##############################################
-##############################################
-#Clear the memory
-rm(list = ls())
-  
+############################################# 
 #Inicializations
 fromx=0
 tox=0.999
@@ -22,27 +19,27 @@ f_UW <- function(x)
 # Information for the construction of Figure 3a of Section 3.
 b = 3.0
 u = 0.2
-curve(f_WU,from=fromx, to=tox, add = FALSE, lty= 1,xlab = expression("x"),
+curve(f_UW,from=fromx, to=tox, add = FALSE, lty= 1,xlab = expression("x"),
       ylab = expression("f(x)"),ylim =c(yliminf,ylimsup), col =1, lwd = 1) 
 
 b = 3.0
 u = 0.3
-curve(f_WU,from=fromx, to=tox, add = TRUE, lty=1,
+curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylab = expression("f(x)"),ylim =c(yliminf,ylimsup), col = 2, lwd = 1)
 
 b = 3.0
 u = 0.5
-curve(f_WU,from=fromx, to=tox, add = TRUE, lty=1,
+curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylab = expression("f(x)"),ylim =c(yliminf,ylimsup), col = 3, lwd = 1)
 
 b = 3.0
 u = 0.6
-curve(f_WU, from=fromx, to=tox, add = TRUE, lty=1, ylab = expression("f(x)"),
+curve(f_UW, from=fromx, to=tox, add = TRUE, lty=1, ylab = expression("f(x)"),
       ylim =c(yliminf,ylimsup), col = 4, lwd = 1)
 
 b = 3.0
 u = 0.7
-curve(f_WU,from=fromx, to=tox, add = TRUE, lty=1,
+curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylab = expression("f(x)"),xlab = expression("x"),
       ylim =c(yliminf,ylimsup), col = 5, lwd = 1)
 
@@ -60,27 +57,27 @@ legend("top", c(expression(paste(beta,' = 0.2 ')),
 # Information for the construction of Figure 3b of Section 3.
 b = 0.1
 u = 0.6
-curve(f_WU,from=fromx, to=tox, add = FALSE, lty= 1,xlab = expression("x"),
+curve(f_UW,from=fromx, to=tox, add = FALSE, lty= 1,xlab = expression("x"),
       ylab = expression("f(x)"),ylim =c(yliminf,ylimsup), col =1, lwd = 1)
 
 b = 0.4
 u = 0.6
-curve(f_WU,from=fromx, to=tox, add = TRUE, lty=1,
+curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylab = expression("f(x)"),ylim =c(yliminf,ylimsup), col = 2, lwd = 1)
 
 b = 0.9
 u = 0.6
-curve(f_WU,from=fromx, to=tox, add = TRUE, lty=1,
+curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylab = expression("f(x)"),ylim =c(yliminf,ylimsup), col = 3, lwd = 1)
 
 b = 1.1
 u = 0.6
-curve(f_WU, from=fromx, to=tox, add = TRUE, lty=1, ylab = expression("f(x)"),
+curve(f_UW, from=fromx, to=tox, add = TRUE, lty=1, ylab = expression("f(x)"),
       ylim =c(yliminf,ylimsup), col = 4, lwd = 1)
 
 b = 1.5
 u = 0.6
-curve(f_WU,from=fromx, to=tox, add = TRUE, lty=1,
+curve(f_UW,from=fromx, to=tox, add = TRUE, lty=1,
       ylab = expression("f(x)"),xlab = expression("x"),
       ylim =c(yliminf,ylimsup), col = 5, lwd = 1)
 
