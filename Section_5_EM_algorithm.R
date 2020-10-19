@@ -1,11 +1,9 @@
 #Clear the memory
-rm(list = ls())
 library(readxl)
 library(AdequacyModel)
-setwd("/home/charles/Área de Trabalho/Applied Mathematics and Computation/Gráficos")
 
 tau = 0.5  
-R = 10
+R = 10000
 semente = 271
 set.seed(semente)
 tempo.inicio = Sys.time()
