@@ -1,29 +1,17 @@
-rm(list = ls()) 
-
 ### Checking the moments of the unit Weibull distribution
+library("gsl")
 ################################################################
 tau=0.5 #### setting the distribution parameters for conference purposes
-mu1=0.6
-beta1 = 1.5
+mu1=0.5
+beta1 = 3.5
 ####################################################
 ### Creating a function to calculate the density ###
 ####################################################
 f_UW<-function(x){
   beta1*log(tau)/(x*(log(mu1)))*(log(x)/log(mu1))^(beta1-1)*tau^((log(x)/log(mu1))^(beta1))
-    }
-
-integrate(f_UW,0,1)
-
-####################################################
-### Creating a function to calculate the accumulated ###
-####################################################
-F_UW<-function(x){
- tau^((log(x)/log(mu1))^(beta1))
 }
 
-y=.9
-integrate(f_UW,0,y)
-F_UW(y)
+integrate(f_UW,0,1)
 
 # sth numerical moment
 s = 5
@@ -31,19 +19,14 @@ mh_UW<-function(x){
   x^s*f_UW(x)
 }
 
-R = 15
-z = beta1*(-(log(tau))/((-log(mu1))^beta1))
+R = 100
 mu = vector()
-k = 0
 for( k in 0:R){
- mu[k+1] = (1/factorial(k))*
-   ((log(tau))^(k))/
-   ((-log(mu1))^(k*beta1))*
-   (s^(-beta1*(k+1)))*
-   gamma(beta1*(k+1))
+  mu[k+1] = (s*log(mu1))^k/(factorial(k)*(-log(tau))^(k/beta1))*
+    gamma(k/beta1+1)
 }
-q = z*sum(mu)
-q ### sth moment of the WU distribution
+q = sum(mu)
+q ### sth moment of the UW distribution
 
 integrate(mh_UW,0,1)
 
@@ -53,20 +36,16 @@ mhi_UW<-function(x){
   x^s*f_UW(x)
 }
 
+vec1= vector()
+  a = - log(tau)/(-log(mu1))^beta1 
 ###### sth incomplete moment of the WU distribution
 for( k in 0:R){
-  mu[k+1] = (1/factorial(k))*
-    ((log(tau))^k)/
-    ((-log(mu1))^(k*beta1))*
-    (s^(-beta1*(k+1)))*
-    pgamma(beta1*(k+1), - s*log(r))
+  vec1[k+1] = (-s)^k*a^(-k/beta1)*
+    (gamma_inc(k/beta1 + 1, a*(-log(r))^beta1))/factorial(k)
 }
-h = z*sum(mu)
-h
+h = sum(vec1)
+h  #sth incomplete moment of the WU distribution
 
 integrate(mhi_UW, 0, r)
   
-
-
-
 
