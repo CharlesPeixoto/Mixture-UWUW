@@ -144,7 +144,7 @@ k = k + 1
 ## List with results
 tempo.fim = Sys.time()
 tempo.exec = tempo.fim- tempo.inicio
-resultado = list(est_mu_beta = Mat_mu_beta, tempo=tempo.exec)
+resultado = list(est_mu_beta = round(Mat_mu_beta,4), tempo=tempo.exec)
 
 resultado
 
