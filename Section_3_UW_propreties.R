@@ -37,11 +37,10 @@ mhi_UW<-function(x){
 }
 
 vec1= vector()
-  a = - log(tau)/(-log(mu1))^beta1 
 ###### sth incomplete moment of the WU distribution
 for( k in 0:R){
-  vec1[k+1] = (-s)^k*a^(-k/beta1)*
-    (gamma_inc(k/beta1 + 1, a*(-log(r))^beta1))/factorial(k)
+  vec1[k+1] = (-s)^k*(-log(tau)/(-log(mu1))^beta1 )^(-k/beta1)*
+    (gamma_inc(k/beta1 + 1, (log(tau)/(-log(mu1))^beta1)*(log(r))^beta1))/factorial(k)
 }
 h = sum(vec1)
 h  #sth incomplete moment of the WU distribution
