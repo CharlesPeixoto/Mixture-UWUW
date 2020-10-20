@@ -63,18 +63,15 @@ mhi_UWUW<-function(x){
 vec2 = vector()
 vec3 = vector()
 
-a = - log(tau)/(-log(mu1))^beta1
-g  =  - log(tau)/(-log(mu2))^beta2
-
 # h-th analytical moment
 for( k in 0:R){
-  vec2[k+1] = (-s)^k*a^(-k/beta1)*
-    (gamma_inc(k/beta1 + 1, a*(-log(r))^beta1))/factorial(k)
+  vec2[k+1] = (-s)^k*(-log(tau)/(-log(mu1))^beta1)^(-k/beta1)*
+    (gamma_inc(k/beta1 + 1, (log(tau)/(-log(mu1))^beta1)*(log(r))^beta1))/factorial(k)
 }
 
 for( k in 0:R){
-  vec3[k+1] = (-s)^k*g^(-k/beta2)*
-    (gamma_inc(k/beta2 + 1, g*(-log(r))^beta2))/factorial(k)
+  vec3[k+1] = (-s)^k*(-log(tau)/(-log(mu2))^beta2)^(-k/beta2)*
+    (gamma_inc(k/beta2 + 1, (log(tau)/(-log(mu2))^beta2)*(log(r))^beta2))/factorial(k)
 }
 
 h = p*sum(vec2) + (1-p)*sum(vec3)
