@@ -54,7 +54,7 @@ curve(f_UWUW,from=fromx, to=tox, add = TRUE, lty=1, ylab = expression("f(y)"),xl
       ylim =c(yliminf,ylimsup), col = 5, lwd = 1)
   
 
-legend("topright", c(expression(paste(mu,1, " = 0.2, ", mu,2, " = 0.1, ", beta,2,' = 2.0 ')),
+legend("topleft", c(expression(paste(mu,1, " = 0.2, ", mu,2, " = 0.1, ", beta,2,' = 2.0 ')),
                      c(expression(paste(mu,1, " = 0.4, ", mu,2, " = 0.2, ", beta,2,' = 2.0 ')),
                        c(expression(paste(mu,1, " = 0.5, ", mu,2, " = 0.3, ", beta,2,' = 2.5 ')),
                          c(expression(paste(mu,1, " = 0.6, ", mu,2, " = 0.4, ", beta,2,' = 5.0 ')),
